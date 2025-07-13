@@ -52,16 +52,16 @@ export async function signUpAction(prevState: State, data: FormData): Promise<St
   }
 
   try {
-    const response = await resend.contacts.create({
+    const { data: responseData, error: responseError } = await resend.contacts.create({
       email: validatedFields.data.email,
       audienceId: audienceId,
     });
 
-    if (response.error) {
-      console.error('Resend API Error:', response.error);
+    if (responseError) {
+      console.error('Resend API Error:', responseError);
       return {
         status: 'error',
-        message: response.error.message || 'Could not subscribe. Please try again later.'
+        message: responseError.message || 'Could not subscribe. Please try again later.'
       };
     }
 

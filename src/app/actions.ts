@@ -52,18 +52,29 @@ export async function signUpAction(prevState: State, data: FormData): Promise<St
   }
 
   try {
-    const { data: responseData, error: responseError } = await resend.contacts.create({
+    const { data: responseData, error } = await resend.contacts.create({
       email: validatedFields.data.email,
       audienceId: audienceId,
     });
 
-    if (responseError) {
-      console.error('Resend API Error:', responseError);
+    if (error) {
+      console.error('Resend API Error:', error);
       return {
         status: 'error',
-        message: responseError.message || 'Could not subscribe. Please try again later.'
+        message: error.message || 'Could not subscribe. Please try again later.'
       };
     }
+    
+    // Only redirect if the contact was created successfully
+    if (responseData) {
+      redirect('/thank-you');
+    }
+
+    // This part should not be reached if redirect happens, but as a fallback:
+    return {
+        status: 'success',
+        message: 'Successfully subscribed!'
+    };
 
   } catch (error) {
     console.error('An unexpected error occurred:', error);
@@ -72,6 +83,4 @@ export async function signUpAction(prevState: State, data: FormData): Promise<St
       message: 'An unexpected error occurred. Please try again later.'
     }
   }
-
-  redirect('/thank-you');
 }

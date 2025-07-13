@@ -15,11 +15,8 @@ const formSchema = z.object({
 });
 
 type State = {
-  status: 'success' | 'error';
+  status: string;
   message: string;
-} | {
-  status: 'idle';
-  message: '';
 };
 
 export async function signUpAction(prevState: State, data: FormData): Promise<State> {
@@ -67,6 +64,8 @@ export async function signUpAction(prevState: State, data: FormData): Promise<St
     
     // Only redirect if the contact was created successfully
     if (responseData) {
+      // The redirect will throw a NEXT_REDIRECT error, which is expected
+      // This will be caught by Next.js and handled appropriately
       redirect('/thank-you');
     }
 
@@ -77,6 +76,12 @@ export async function signUpAction(prevState: State, data: FormData): Promise<St
     };
 
   } catch (error) {
+    // Check if this is the expected NEXT_REDIRECT error
+    if (error instanceof Error && error.message.includes('NEXT_REDIRECT')) {
+      // This is expected behavior, let it propagate
+      throw error;
+    }
+    
     console.error('An unexpected error occurred:', error);
     return {
       status: 'error',

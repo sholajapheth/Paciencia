@@ -102,7 +102,7 @@ export function EmailGeneratorForm() {
                 name="productName"
                 value={formData.productName}
                 onChange={handleInputChange}
-                placeholder="e.g., The "Artisan" Crossbody Bag"
+                placeholder="e.g., The Artisan Crossbody Bag"
               />
             </div>
             <div className="space-y-2">

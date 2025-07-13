@@ -14,18 +14,31 @@ const formSchema = z.object({
   }),
 });
 
-export async function signUpAction(data: z.infer<typeof formSchema>) {
-  const validatedFields = formSchema.safeParse(data);
+type State = {
+  status: 'success' | 'error';
+  message: string;
+} | {
+  status: 'idle';
+  message: '';
+};
+
+export async function signUpAction(prevState: State, data: FormData): Promise<State> {
+  const email = data.get('email');
+  const validatedFields = formSchema.safeParse({ email });
 
   if (!validatedFields.success) {
-    throw new Error(
-      validatedFields.error.flatten().fieldErrors.email?.[0] || 'Invalid input.'
-    );
+    return {
+      status: 'error',
+      message: validatedFields.error.flatten().fieldErrors.email?.[0] || 'Invalid input.'
+    };
   }
 
   if (!audienceId) {
     console.error('RESEND_AUDIENCE_ID is not configured in .env file.');
-    throw new Error('Email service is not configured. Please contact support.');
+    return {
+      status: 'error',
+      message: 'Email service is not configured. Please contact support.',
+    }
   }
 
   try {
@@ -38,7 +51,10 @@ export async function signUpAction(data: z.infer<typeof formSchema>) {
     // You might want to check for specific error types, e.g., if the email
     // is already subscribed, you could still treat it as a success.
     // For now, any error will be reported to the user.
-    throw new Error('Could not subscribe. Please try again later.');
+    return {
+      status: 'error',
+      message: 'Could not subscribe. Please try again later.'
+    }
   }
 
   // On successful "submission", redirect to the thank you page.

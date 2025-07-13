@@ -34,7 +34,17 @@ export async function signUpAction(prevState: State, data: FormData): Promise<St
   }
 
   if (!audienceId) {
-    console.error('RESEND_AUDIENCE_ID is not configured in .env file.');
+    const errorMessage = 'RESEND_AUDIENCE_ID is not configured in .env file.';
+    console.error(errorMessage);
+    return {
+      status: 'error',
+      message: 'Email service is not configured. Please contact support.',
+    }
+  }
+  
+  if (!process.env.RESEND_API_KEY) {
+    const errorMessage = 'RESEND_API_KEY is not configured in .env file.';
+    console.error(errorMessage);
     return {
       status: 'error',
       message: 'Email service is not configured. Please contact support.',
@@ -42,21 +52,26 @@ export async function signUpAction(prevState: State, data: FormData): Promise<St
   }
 
   try {
-    await resend.contacts.create({
+    const response = await resend.contacts.create({
       email: validatedFields.data.email,
       audienceId: audienceId,
     });
+
+    if (response.error) {
+      console.error('Resend API Error:', response.error);
+      return {
+        status: 'error',
+        message: response.error.message || 'Could not subscribe. Please try again later.'
+      };
+    }
+
   } catch (error) {
-    console.error('Resend API error:', error);
-    // You might want to check for specific error types, e.g., if the email
-    // is already subscribed, you could still treat it as a success.
-    // For now, any error will be reported to the user.
+    console.error('An unexpected error occurred:', error);
     return {
       status: 'error',
-      message: 'Could not subscribe. Please try again later.'
+      message: 'An unexpected error occurred. Please try again later.'
     }
   }
 
-  // On successful "submission", redirect to the thank you page.
   redirect('/thank-you');
 }

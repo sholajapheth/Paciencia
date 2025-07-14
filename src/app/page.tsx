@@ -4,8 +4,7 @@ import { Tag, Eye, Sparkles } from 'lucide-react';
 import { SignUpForm } from '@/components/sign-up-form';
 import { Logo } from '@/components/logo';
 import { SiteFooter } from '@/components/site-footer';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+
 
 export default function Home() {
   return (

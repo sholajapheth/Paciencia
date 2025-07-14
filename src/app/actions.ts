@@ -9,6 +9,12 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const audienceId = process.env.RESEND_AUDIENCE_ID;
 
 const formSchema = z.object({
+  firstName: z.string().min(1, {
+    message: 'First name is required.',
+  }),
+  birthday: z.string().regex(/^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])$/, {
+    message: 'Please enter birthday in MM/DD format (e.g., 07/28).',
+  }),
   email: z.string().email({
     message: 'Please provide a valid email address to subscribe.',
   }),
@@ -20,13 +26,19 @@ type State = {
 };
 
 export async function signUpAction(prevState: State, data: FormData): Promise<State> {
+  const firstName = data.get('firstName');
+  const birthday = data.get('birthday');
   const email = data.get('email');
-  const validatedFields = formSchema.safeParse({ email });
+  
+  const validatedFields = formSchema.safeParse({ firstName, birthday, email });
 
   if (!validatedFields.success) {
     return {
       status: 'error',
-      message: validatedFields.error.flatten().fieldErrors.email?.[0] || 'Invalid input.'
+      message: validatedFields.error.flatten().fieldErrors.email?.[0] || 
+               validatedFields.error.flatten().fieldErrors.firstName?.[0] ||
+               validatedFields.error.flatten().fieldErrors.birthday?.[0] ||
+               'Invalid input.'
     };
   }
 
@@ -51,6 +63,8 @@ export async function signUpAction(prevState: State, data: FormData): Promise<St
   try {
     const { data: responseData, error } = await resend.contacts.create({
       email: validatedFields.data.email,
+      firstName: validatedFields.data.firstName,
+      lastName: validatedFields.data.birthday, // Store birthday in lastName field
       audienceId: audienceId,
     });
 

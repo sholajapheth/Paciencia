@@ -1,15 +1,14 @@
-import Image from 'next/image';
-import { Tag, Eye, Sparkles } from 'lucide-react';
+import Image from "next/image";
+import { Tag, Eye, Sparkles } from "lucide-react";
 
-import { SignUpForm } from '@/components/sign-up-form';
-import { Logo } from '@/components/logo';
-import { SiteFooter } from '@/components/site-footer';
-
+import { SignUpForm } from "@/components/sign-up-form";
+import { Logo } from "@/components/logo";
+import { SiteFooter } from "@/components/site-footer";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 bg-white flex items-center ">
+      <header className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center ">
         <Logo />
       </header>
 
@@ -26,15 +25,25 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-black/30" />
           <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-primary-foreground">
-            <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight">
+            {/* <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight">
             Paciencia
             </h1>
+             */}
+            <Image
+              src="/logo_w.png"
+              alt="Paciencia"
+              className="w-[250px] md:w-[400px] h-auto"
+              width={300}
+              height={300}
+              quality={100}
+              priority
+              unoptimized={true}
+            />
             <p className="mt-4 max-w-2xl text-lg md:text-xl">
-            Your Patience is Your Power.
+              Your Patience is Your Power.
             </p>
           </div>
         </section>
-
 
         {/* Value Proposition Section */}
         {/* <section className="py-16 sm:py-24">
@@ -87,7 +96,8 @@ export default function Home() {
                 Made for you.
               </h2> */}
               <p className="mt-2 text-3xl text-muted-foreground">
-                Join the list to receive early access to our next drop, private offers, and what's unfolding behind the scenes.
+                Join the list to receive early access to our next drop, private
+                offers, and what's unfolding behind the scenes.
               </p>
               <SignUpForm />
             </div>

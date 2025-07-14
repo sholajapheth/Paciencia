@@ -83,9 +83,9 @@ export default function Home() {
         <section className="bg-secondary py-16 sm:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-headline text-3xl sm:text-4xl">
+              {/* <h2 className="font-headline text-3xl sm:text-4xl">
                 Made for you.
-              </h2>
+              </h2> */}
               <p className="mt-2 text-3xl text-muted-foreground">
                 Join the list to receive early access to our next drop, private offers, and what's unfolding behind the scenes.
               </p>

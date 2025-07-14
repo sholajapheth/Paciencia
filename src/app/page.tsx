@@ -19,8 +19,8 @@ export default function Home() {
         <section className="relative h-[60vh] min-h-[400px] w-full">
           <Image
             src="/bg.png"
-            alt="A stylish leather bag on a minimalist background"
-            data-ai-hint="leather bag minimalist"
+            alt="A stylish bag on a minimalist background"
+            data-ai-hint="bag minimalist"
             fill
             className="object-cover"
             priority
@@ -31,9 +31,7 @@ export default function Home() {
             Paciencia
             </h1>
             <p className="mt-4 max-w-2xl text-lg md:text-xl">
-            Girl, we’ve been saving you a seat.
-
-Style with soul. Beauty with purpose. Beyond The Rush.
+            Made for you.
             </p>
           </div>
         </section>
@@ -44,10 +42,10 @@ Style with soul. Beauty with purpose. Beyond The Rush.
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h2 className="font-headline text-3xl sm:text-4xl">
-                The Insider's Privileges
+                Join the list to receive early access to our next drop, private offers, and what's unfolding behind the scenes.
               </h2>
               <p className="mt-2 text-lg text-muted-foreground">
-                Subscribe for a curated journey into the world of luxury leather.
+                We won't email often. Just when it matters.
               </p>
             </div>
             <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-3">
@@ -55,30 +53,27 @@ Style with soul. Beauty with purpose. Beyond The Rush.
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-secondary">
                   <Tag className="h-6 w-6 text-secondary-foreground" />
                 </div>
-                <h3 className="mt-6 text-xl font-semibold">Exclusive Offers</h3>
+                <h3 className="mt-6 text-xl font-semibold">Early Access</h3>
                 <p className="mt-2 text-muted-foreground">
-                  Receive special discounts and promotions available only to our
-                  subscribers.
+                  Be the first to know about our next drop and get exclusive access to new releases.
                 </p>
               </div>
               <div className="text-center">
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-secondary">
                   <Eye className="h-6 w-6 text-secondary-foreground" />
                 </div>
-                <h3 className="mt-6 text-xl font-semibold">First Previews</h3>
+                <h3 className="mt-6 text-xl font-semibold">Private Offers</h3>
                 <p className="mt-2 text-muted-foreground">
-                  Be the first to see our new collections and limited-edition
-                  releases.
+                  Receive special discounts and promotions available only to our subscribers.
                 </p>
               </div>
               <div className="text-center">
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-secondary">
                   <Sparkles className="h-6 w-6 text-secondary-foreground" />
                 </div>
-                <h3 className="mt-6 text-xl font-semibold">Curated Style Tips</h3>
+                <h3 className="mt-6 text-xl font-semibold">Behind the Scenes</h3>
                 <p className="mt-2 text-muted-foreground">
-                  Get expert advice on how to style and care for your luxury
-                  leather goods.
+                  Get exclusive insights into our creative process and what's coming next.
                 </p>
               </div>
             </div>
@@ -90,10 +85,10 @@ Style with soul. Beauty with purpose. Beyond The Rush.
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="font-headline text-3xl sm:text-4xl">
-                Join the Inner Circle
+                Made for you.
               </h2>
               <p className="mt-2 text-lg text-muted-foreground">
-                Enter your email to unlock a world of elegance and exclusivity.
+                Join the list to receive early access to our next drop, private offers, and what's unfolding behind the scenes.
               </p>
               <SignUpForm />
             </div>

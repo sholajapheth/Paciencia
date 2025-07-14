@@ -3,9 +3,9 @@ import { Toaster } from '@/components/ui/toaster';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'SADE by shadebum Insider',
+  title: 'Paciencia',
   description:
-    'Exclusive offers, previews, and style tips for leather goods enthusiasts.',
+    'Style with soul. Beauty with purpose. Beyond The Rush.',
 };
 
 export default function RootLayout({

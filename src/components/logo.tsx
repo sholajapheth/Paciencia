@@ -5,9 +5,9 @@ export function Logo() {
     <Link
       href="/"
       className="inline-block font-headline text-2xl tracking-tight"
-      aria-label="SADE by shadebum Home"
+      aria-label="Paciencia Home"
     >
-      SADE
+      Paciencia
     </Link>
   );
 }

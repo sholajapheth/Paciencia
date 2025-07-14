@@ -1,20 +1,21 @@
-# **App Name**: SADE by shadebum Insider
+# **App Name:** P by shadebum Insider
 
-## Core Features:
+## Key Features
 
-- Hero Showcase: Eye-catching hero section with high-quality imagery of leather bags and a brief value proposition.
-- Simple Sign-Up: Email sign-up form integrated directly into the landing page for easy access.
-- Value Proposition Display: Clearly state the benefits of subscribing: exclusive offers, previews, style tips.
-- Thank You Page: Basic thank you page after a user signs up to confirm their registration.
-- Email automation: Connect to Resend to collect contact information and set up automated email delivery system.
-- AI-Powered Email Content: AI tool to generate subject lines or initial content for email marketing based on trends in fashion and customer preferences.
+- **Hero Section:** Striking hero area featuring premium imagery of leather bags and a concise value proposition.
+- **Integrated Sign-Up:** Prominently placed email sign-up form on the landing page for effortless subscription.
+- **Benefits Highlight:** Clear presentation of subscriber perks—exclusive offers, early previews, and curated style tips.
+- **Confirmation Page:** Simple thank you page to acknowledge successful sign-up.
+- **Automated Email Workflow:** Integration with Resend for contact collection and automated email delivery.
+- **AI-Driven Email Content:** Utilize AI to generate engaging subject lines and initial marketing content tailored to fashion trends and customer interests.
 
-## Style Guidelines:
+## Visual & Brand Guidelines
 
-- Primary color: Green (#66754C) to reflect the brand's elegance.
-- Secondary color: White (#FFFEF8) and Cream (#F6EEDA) to enhance the premium look.
-- Text Color: Dark gray (#393939) for main body content to ensure readability and elegance.
-- Header font: 'Classy Vogue' for a stylish and refined aesthetic. Note: currently only Google Fonts are supported.
-- Body font: 'Red Hat Display' for clear, legible text. Note: currently only Google Fonts are supported.
-- Clean, minimalist layout with generous spacing and strategic use of imagery.
-- Use minimalistic icons for visual cues and enhancement; leather goods related icons in monochromatic style.
+- **Primary Color:** Green (#66754C) for a sophisticated, elegant brand presence.
+- **Secondary Colors:** White (#FFFEF8) and Cream (#F6EEDA) to reinforce a premium, clean aesthetic.
+- **Text Color:** Dark gray (#393939) for optimal readability and refined appearance.
+- **Typography:** 
+  - Headings: 'Classy Vogue' (stylish, refined; use Google Fonts only)
+  - Body: 'Red Hat Display' (clear, modern; use Google Fonts only)
+- **Layout:** Minimalist design with ample spacing and impactful imagery.
+- **Iconography:** Monochrome, minimal icons—preferably leather goods themed—for subtle visual enhancement.

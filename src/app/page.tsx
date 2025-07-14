@@ -17,11 +17,11 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative h-[60vh] min-h-[400px] w-full">
           <Image
-            src="/bg.png"
+            src="/bg.jpeg"
             alt="A stylish bag on a minimalist background"
             data-ai-hint="bag minimalist"
             fill
-            className="object-cover"
+            className="object-cover rotate-180"
             priority
           />
           <div className="absolute inset-0 bg-black/30" />
@@ -30,14 +30,14 @@ export default function Home() {
             Paciencia
             </h1>
             <p className="mt-4 max-w-2xl text-lg md:text-xl">
-            Made for you.
+            Your Patience is Your Power.
             </p>
           </div>
         </section>
 
 
         {/* Value Proposition Section */}
-        <section className="py-16 sm:py-24">
+        {/* <section className="py-16 sm:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h2 className="font-headline text-3xl sm:text-4xl">
@@ -77,7 +77,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Sign-up Section */}
         <section className="bg-secondary py-16 sm:py-24">
@@ -86,7 +86,7 @@ export default function Home() {
               <h2 className="font-headline text-3xl sm:text-4xl">
                 Made for you.
               </h2>
-              <p className="mt-2 text-lg text-muted-foreground">
+              <p className="mt-2 text-3xl text-muted-foreground">
                 Join the list to receive early access to our next drop, private offers, and what's unfolding behind the scenes.
               </p>
               <SignUpForm />

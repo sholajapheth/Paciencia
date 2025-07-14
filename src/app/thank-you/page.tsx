@@ -6,8 +6,8 @@ export default function ThankYouPage() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-secondary p-4 text-center">
       <div className="max-w-md">
-        {/* <Heart className="mx-auto h-16 w-16 text-primary" /> */}
-        <h1 className="mt-6 font-headline text-4xl sm:text-5xl">
+       
+        <h1 className="mt-6 font-headline text-3xl sm:text-4xl">
           Oh my God, you're in! 💚
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
